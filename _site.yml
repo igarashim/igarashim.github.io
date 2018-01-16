@@ -1,5 +1,5 @@
 name: "igarashi"
-output_dir:"."
+output_dir: "."
 navbar:
   title: "Mirai Igarashi"
   left:
