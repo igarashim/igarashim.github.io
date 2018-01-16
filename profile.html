@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Profile</title>
+
+<script src="site_libs/jquery-1.12.4/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-1.1/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+<script src="site_libs/htmlwidgets-0.8/htmlwidgets.js"></script>
+<link href="site_libs/leaflet-0.7.7/leaflet.css" rel="stylesheet" />
+<script src="site_libs/leaflet-0.7.7/leaflet.js"></script>
+<link href="site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<link href="site_libs/leaflet-label-0.2.2/leaflet.label.css" rel="stylesheet" />
+<script src="site_libs/leaflet-label-0.2.2/leaflet.label.js"></script>
+<script src="site_libs/Proj4Leaflet-0.7.2/proj4-compressed.js"></script>
+<script src="site_libs/Proj4Leaflet-0.7.2/proj4leaflet.js"></script>
+<script src="site_libs/leaflet-binding-1.1.0/leaflet.js"></script>
+<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Mirai Igarashi</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    Home
+  </a>
+</li>
+<li>
+  <a href="profile.html">
+    <span class="fa fa-user"></span>
+     
+    Profile
+  </a>
+</li>
+<li>
+  <a href="publication.html">
+    <span class="fa fa-file-text"></span>
+     
+    Publication
+  </a>
+</li>
+<li>
+  <a href="https://twitter.com/510future">
+    <span class="fa fa-twitter"></span>
+     
+    Twitter
+  </a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Profile</h1>
+
+</div>
+
+
+<div id="education" class="section level3">
+<h3>Education</h3>
+<ul>
+<li>Tohoku University, B.A. of Management 2016</li>
+</ul>
+<hr />
+</div>
+<div id="employment" class="section level3">
+<h3>Employment</h3>
+<ul>
+<li>2018.04 - 2020.03 Research Fellow of the Japan Society for the Promotion of Science</li>
+<li>2017.04 - present Teaching Assistant for Marketing Research Seminar</li>
+<li>2016.10 - 2017.03 Teaching Assistant for Asset Management</li>
+</ul>
+<hr />
+</div>
+<div id="personal-skills" class="section level3">
+<h3>Personal Skills</h3>
+<p style="text-indent:1em">
+R, Python, C++, etc.
+</p>
+<!--
+##{.tabset .tabset-fade .tabset-pill}
+
+### bicycle
+<img src="bianchi.jpg" alt="" align="right" width="500px">
+<p>I go to school by riding raod bike, [IMPULSO](https://www.cycleurope.co.jp/2012/bikes/road/c2c/impulso_alu_105_10sp_compact.html)(2012 model) made by Bianchi. </p>
+
+<p>But I recently get tired to ride for even 30 minutes to go to school, I guess it's because of age... So I want to buy own car, and drive to somewhere far away on holiday.</p>
+
+<br><br><br><br><br><br><br><br><br><br>
+
+### coffee
+<p>I love coffee, and a cup of coffee makes me calm down.<br>
+In Sendai, there are many coffee shops, where is good taste, relaxed atmosphere, or playing nice music.<br>
+Here I introduce some shops around Sendai station.</p>
+<p>
+* **as time**: in the Clisroad, featuring quiet atmosphere and strong coffee
+* **道玄坂 (dougenzaka)**: mysterious shop that there are many old comics and small articles 
+* **珈巣多夢 (custom)**: I love drinking coffee while watching trees of Jozenji street at window seat
+* **corner house**: flower shop and coffee shop and bar, playing AOR musics
+* **トキシラズ(tokishirazu)**: bar offering good coffee, playing bossa nova
+* **ぴーぷる (people)**: offering so large spaghetti, I like here's neapolitan
+* **cafe mozart Atelier**: I recommend terrace seats with Hirese river view
+* **まめ坊 (mamebou)**: many cups are displayed, and we can drink by own selecting cup 
+* **teato**: tea and alcohol and sometimes coffee, lunch menu is also nice
+* **赤い屋根(akai yane)**: let's have fun flower's smell as garnish to coffee
+* **Kingston**: just out of Sendai station so we can stop by if little time
+* **今野珈琲 (konno coffee)**: playing rock musician's live video and displaying many records (such as Jeff Beck and Pink Floyd)
+* **さふらん (sahuran)**: here's Katsukare is very delicious
+</p>
+<div id="htmlwidget-b6af8089ab8b23bb7484" style="width:672px;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b6af8089ab8b23bb7484">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"maxNativeZoom":null,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"continuousWorld":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":null,"unloadInvisibleTiles":null,"updateWhenIdle":null,"detectRetina":false,"reuseTiles":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[[38.260882,38.26081,38.266255,38.260691,38.249512,38.249615,38.254902,38.254991,38.258174,38.260153,38.261756,38.258156,38.265143],[140.873854,140.869215,140.869139,140.869473,140.880377,140.881316,140.86945,140.869299,140.885569,140.880459,140.876779,140.886603,140.875071],null,null,null,{"clickable":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["as time","dougenzaka","custom","corner house","tokishirazu","people","cafe mozart Atelier","mamebou","teato","Kingston","konnno coffee","akai yane","sahuran"],null,null,null,["as time","dougenzaka","custom","corner house","tokishirazu","people","cafe mozart Atelier","mamebou","teato","Kingston","konnno coffee","akai yane","sahuran"],null,null]}],"limits":{"lat":[38.249512,38.266255],"lng":[140.869139,140.886603]}},"evals":[],"jsHooks":[]}</script>
+<br><br><br>
+
+
+### music
+I like listening to and playing music, here are my favorite artists and their genre of music. To be honest, I think classifying musics or artists by genre is nonsense, but it's easy to see rather than disorder. 
+
+music         artist                                                                                                                                                                
+------------  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AOR           apple pie, Asako Toki, cero, GUIRO, Hitomi Toi, Lamp, never young beach, often mofun, PETROLZ, pizzicato five, Ryusenkei, Suchmos, SUGAR BABE, yogee new waves, yukaD 
+SSW           Ayano Kaneko, Predawn, Sachie Hiraga, sugar me                                                                                                                        
+POP           bice, sayonara ponytail, skirt, Soutaiseiriron, YEN TOWN BAND, Yuko Ando                                                                                              
+alternative   bloodthirsty butchers, Day Wave, fazerdaze, kinoko teikoku, microcosm, moscow club, Number Girl, toddle                                                               
+indie rock    And Summer Club, car10, Helsinki Lambda Club, Homecomings, she said, typhoon club                                                                                     
+post rock     age factory, the cabs, downy, tricot                                                                                                                                  
+ROCK          Cubismo Grafico Five, DYGL, mitsume, Pilocarpine, school food pinishment, Spangle call Lilli line, supercar, Tokyo Police Club, VELTPUNCH                             
+electronic    CAPSULE, Conor Maynard, D.A.N., i am robot and proud, Kaskade, Perfume, yahyel, Zedd                                                                                  
+hiphop        budamunk, c.o.s.a., campanella, EVISBEATS, flas$backs, Kandytown, Ovall                                                                                               
+-->
+<p><br><br><br></p>
+</div>
+
+<p>Copyright &copy; 2017 Mirai Igarashi All rights reserved.</p>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
