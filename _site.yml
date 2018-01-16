@@ -1,0 +1,24 @@
+name: "igarashi"
+output_dir:"."
+navbar:
+  title: "Mirai Igarashi"
+  left:
+    - text: "Home"
+      icon: fa-home
+      href: index.html
+    - text: "Profile"
+      icon: fa-user
+      href: "profile.html"
+    - text: "Publication"
+      icon: fa-file-text
+      href: publication.html
+    - text: "Twitter"
+      icon: fa-twitter
+      href: https://twitter.com/510future
+output:
+  html_document:
+    theme: cosmo
+    highlight: textmate
+    include:
+      after_body: footer.html
+  

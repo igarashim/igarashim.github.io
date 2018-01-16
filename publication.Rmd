@@ -1,0 +1,23 @@
+---
+title: "Publication"
+output:
+  html_document: 
+    toc: TRUE
+    toc_float: TRUE
+---
+### Awards
+<p>
+* New Economic Indicator Development Contest Award 2017, (in Japanese) [Link](http://www.dei.or.jp/bigdata_contest/result.html)
+</p>
+### Articles
+#### Refereed Articles
+<p>
+* **Mirai Igarashi**, Yinxing Li, Tsukasa Ishigaki, and Nobuhiko Terui (in press), "Sales Forecasting Model Using Word-of-Mouth on Twitter and Empirical Analysis (in Japanese)," Distribution Information, 49(6).
+</p>
+### Presentations
+<p>
+* "Network Analysis of Social Media and Detection of Influencer," International Workshop on Bayesian Econometric Analysis, Tokyo, Japan, November, 2017.
+* "Economic Indicator Using Social Media (in Japanese)," Workshop on Bayesian Econometric Analysis, Sendai, Japan, February, 2017.
+</p>
+
+***
