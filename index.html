@@ -20,8 +20,8 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/highlightjs-1.1/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-1.1/highlight.js"></script>
 <link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
 
 <style type="text/css">code{white-space: pre;}</style>
@@ -31,12 +31,10 @@
   }
 </style>
 <script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
 }
 </script>
 
@@ -223,7 +221,7 @@ $(document).ready(function () {
 </div>
 
 
-<section id="mirai-igarashi" class="level3">
+<div id="mirai-igarashi" class="section level3">
 <h3>Mirai Igarashi</h3>
 <p>
 <a href="Curriculum Vitae.pdf" target="_blank">Download Curriculum Vitae</a>
@@ -239,8 +237,8 @@ $(document).ready(function () {
 </p>
 <p><br></p>
 <hr />
-</section>
-<section class="level3">
+</div>
+<div class="section level3">
 <h3>自己紹介</h3>
 <p>
 東北大学経済学研究科博士後期課程一年の五十嵐未来と申します。
@@ -252,20 +250,17 @@ $(document).ready(function () {
 消費者行動論に興味があり、ウェブ上の口コミ（あるいは消費者間のコミュニケーション）が購買行動にどのように影響を与えるかという研究に取り組んでいます。
 </p>
 <hr />
-</section>
-<section class="level3">
+</div>
+<div class="section level3">
 <h3>問い合わせ</h3>
 <p>
 （大学）<br> 980-8576<br> 宮城県仙台市青葉区川内27-1<br> 東北大学経済学研究科教務係<br> TEL: 022-795-6265<br> FAX: 022-795-6270
 </p>
 <p>
-（個人）<br> E-mail: mirai.igarashi.s7“atmark”dc.tohoku.ac.jp<br> Twitter: <a href="https://twitter.com/510future" target="_blank"><span class="citation" data-cites="510future">@510future</span></a>
-</p>
+<p>（個人）<br> E-mail: mirai.igarashi.s7“atmark”dc.tohoku.ac.jp<br> *** このサイトは統計ソフトR内のパッケージ<code>rmarkdown</code>を用いて作られています。最終更新:</p>
+<pre><code>## [1] &quot;Tue May 22 10:52:36 2018&quot;</code></pre>
 <hr />
-<p>このサイトは統計ソフトR内のパッケージ<code>rmarkdown</code>を用いて作られています。最終更新:</p>
-<pre><code>## [1] &quot;Wed Apr 18 11:23:46 2018&quot;</code></pre>
-<hr />
-</section>
+</div>
 
 <p>Copyright &copy; 2018 Mirai Igarashi All rights reserved.</p>
 
