@@ -20,8 +20,8 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-1.1/textmate.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
 
 <style type="text/css">code{white-space: pre;}</style>
@@ -31,10 +31,12 @@
   }
 </style>
 <script type="text/javascript">
-if (window.hljs && document.readyState && document.readyState === "complete") {
-   window.setTimeout(function() {
-      hljs.initHighlighting();
-   }, 0);
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
 }
 </script>
 
@@ -221,15 +223,15 @@ $(document).ready(function () {
 </div>
 
 
-<div id="2018420" class="section level3">
+<section id="2018420" class="level3">
 <h3>第０回（2018/4/20）</h3>
 <p>
 <ul>
 <li>Chae et al. (2017) “Spillover Effects in Seeded Word-of-Mouth Marketing Campaigns” [<a href="https://pubsonline.informs.org/doi/abs/10.1287/mksc.2016.1001" target="_blank">論文リンク</a>] [<a href="/統計・マーケティング勉強会/第0回/第0回（担当：五十嵐）.pdf" target="_blank">資料</a>] [<a href="/統計・マーケティング勉強会/第0回/Spillover Effects in Seeded Word-of-Mouth Marketing Campaign.pdf" target="_blank">スライド</a>]</li>
 </ul>
 </p>
-</div>
-<div id="2018511" class="section level3">
+</section>
+<section id="2018511" class="level3">
 <h3>第１回（2018/5/11）</h3>
 <p>
 <ul>
@@ -237,24 +239,32 @@ $(document).ready(function () {
 <li>Simonov et al. (2018) “Competition and Crowd-Out for Brand Keywords in Sponsored Search” [<a href="https://pubsonline.informs.org/doi/abs/10.1287/mksc.2017.1065" target="_blank">論文リンク</a>]</li>
 </ul>
 </p>
-</div>
-<div id="2018518" class="section level3">
+</section>
+<section id="2018518" class="level3">
 <h3>第２回（2018/5/18）</h3>
 <p>
 <ul>
 <li>月岡ら（2015） “トピックモデルを用いた商品の評判要因分析に関する検討” [<a href="https://www.jstage.jst.go.jp/article/fss/31/0/31_655/_article/-char/ja/" target="_blank">論文リンク</a>] [<a href="/統計・マーケティング勉強会/第2回/第2回（担当：富田）.pdf" target="_blank">資料</a>] [<a href="/統計・マーケティング勉強会/第2回/トピックモデルを用いた商品の評判要因分析.pdf" target="_blank">スライド</a>]</li>
 </ul>
 </p>
-</div>
-<div id="2018525" class="section level3">
+</section>
+<section id="2018525" class="level3">
 <h3>第３回（2018/5/25）</h3>
 <p>
 <ul>
 <li>Ganu et al. (2009) “Beyond the Stars: Improving Rating Predictions using Review Text Content” [<a href="http://webdb09.cse.buffalo.edu/accepted.html" target="_blank">論文リンク</a>] [<a href="/統計・マーケティング勉強会/第3回/第3回（担当：酒井）.pdf" target="_blank">資料</a>] [スライド]</li>
 </ul>
 </p>
+</section>
+<section id="201861" class="level3">
+<h3>第４回（2018/6/1）</h3>
+<p>
+<ul>
+<li>五十嵐 (2018) “ソーシャルメディア上のテキスト情報を考慮したインフルエンサー検出モデル” [<a href="/統計・マーケティング勉強会/第4回/第4回（担当：五十嵐）.pdf" target="_blank">スライド</a>]</li>
+</ul>
+</p>
 <hr />
-</div>
+</section>
 
 <p>Copyright &copy; 2018 Mirai Igarashi All rights reserved.</p>
 
