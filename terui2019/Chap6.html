@@ -537,6 +537,100 @@ str(dat)</code></pre>
 </p>
 </div>
 </div>
+<div id="chapter-6-3lasso" class="section level2">
+<h2>Chapter 6-3『LASSO：高次元回帰』</h2>
+<div id="section-4" class="section level3">
+<h3>データセット</h3>
+<p>
+使用するデータセットは、kaggleの <a href="https://www.kaggle.com/tmdb/tmdb-movie-metadata" target="_blank">TMDB 5000 Movie Dataset</a>です。リンク先のDownloadからデータ（credits.csvとmovie.csv）を取得してください。
+</p>
+</div>
+<div id="section-5" class="section level3">
+<h3>前処理</h3>
+<p>
+ダウンロードしたデータには多くの変数が含まれていますが、credit.csvに含まれているcast変数やmovies.csvに含まれているgenres変数などはJSONと呼ばれる形式でデータが保存されており、これらの変数を分析に使える形に変換する必要があります。下はあくまで一例ですが、これらの変数をダミー変数にすることで回帰分析を行える形にしています。
+</p>
+<p>
+まず、JSON形式の変数を受け取り、そこから必要な情報を抽出してダミー変数に変換する<code>make_dum</code>関数を作ります。
+</p>
+<pre class="r"><code>make_dum = function(dat, name){
+  D = length(dat)
+  dat = sapply(dat, str_replace_all, pattern = &quot;\&quot;\&quot;&quot;, replacement = &quot;\&quot;&quot;)
+  dat_all = lapply(dat, fromJSON)
+  tmp = NULL
+  if(name == &quot;cast&quot;){
+    for(i in 1:D){
+      tmp = append(tmp, dat_all[[i]]$name[1:3])
+    }
+  }else{
+    for(i in 1:D){
+      tmp = append(tmp, dat_all[[i]]$name)
+    }
+  }
+  dat_uni = unique(tmp)
+  if(name == &quot;cast&quot;){
+    dat_dum = t(sapply(dat_all, function(x) as.integer(dat_uni %in% x$name[1:3])))
+    rownames(dat_dum) = NULL
+    colnames(dat_dum) = paste0(name, &quot;_&quot;, dat_uni)
+  }else{
+    dat_dum = t(sapply(dat_all, function(x) as.integer(dat_uni %in% x$name)))
+    rownames(dat_dum) = NULL
+    colnames(dat_dum) = paste0(name, &quot;_&quot;, dat_uni)
+  }
+  return(dat_dum)
+}</code></pre>
+<p>
+次に、実際にデータを読み込み、JSON形式の変数をダミー変数に変換します。ここでは<code>casts</code>・<code>genres</code>・<code>keywords</code>・<code>production_companies</code>変数を変換しています。
+</p>
+<pre class="r"><code>library(jsonlite)
+library(stringr)
+library(data.table)
+
+credits = fread(&quot;Chap6_3_credits.csv&quot;, encoding = &quot;UTF-8&quot;)
+cast_dum = make_dum(credits$cast, &quot;cast&quot;)
+
+movies = fread(&quot;Chap6_3_movies.csv&quot;, encoding = &quot;UTF-8&quot;, colClasses = c(revenue = &quot;character&quot;))
+genre_dum = make_dum(movies$genres, &quot;genre&quot;)
+key_dum = make_dum(movies$keywords, &quot;key&quot;)
+comp_dum = make_dum(movies$production_companies, &quot;comp&quot;)</code></pre>
+<p>
+変換前：
+</p>
+<pre class="r"><code>str(credits$cast)</code></pre>
+<pre><code>##  chr [1:4803] &quot;[{\&quot;\&quot;cast_id\&quot;\&quot;: 242, \&quot;\&quot;character\&quot;\&quot;: \&quot;\&quot;Jake Sully\&quot;\&quot;, \&quot;\&quot;credit_id\&quot;\&quot;: \&quot;\&quot;5602a8a7c3a3685532001c9a\&quot;| __truncated__ ...</code></pre>
+<p>
+変換後：
+</p>
+<pre class="r"><code>str(cast_dum)</code></pre>
+<pre><code>##  int [1:4803, 1:5688] 1 0 0 0 0 0 0 0 0 0 ...
+##  - attr(*, &quot;dimnames&quot;)=List of 2
+##   ..$ : NULL
+##   ..$ : chr [1:5688] &quot;cast_Sam Worthington&quot; &quot;cast_Zoe Saldana&quot; &quot;cast_Sigourney Weaver&quot; &quot;cast_Johnny Depp&quot; ...</code></pre>
+<p>
+いくつかの細かな処理をし、必要そうな変数を選んだところ（これは私の見解であり、この変数を必ず使わなければならないわけではない、自ら考えること）、最終的には、n=3376, p=11361のデータとなった。
+</p>
+<pre class="r"><code>movies$revenue = as.numeric(movies$revenue) / 1000
+movies$budget = movies$budget / 1000
+key_dum = key_dum[,colSums(key_dum) &gt; 10]
+
+dm = movies[, c(&quot;revenue&quot;, &quot;budget&quot;, &quot;popularity&quot;, &quot;runtime&quot;, &quot;vote_average&quot;, &quot;vote_count&quot;)]
+dm = cbind(dm, cast_dum, genre_dum, key_dum, comp_dum)
+dm = as.matrix(dm[dm$revenue != 0,])
+dim(dm)</code></pre>
+<pre><code>## [1]  3376 11361</code></pre>
+</div>
+<div id="section-6" class="section level3">
+<h3>課題</h3>
+<p>
+<p>このデータセットを使って以下のタスクを実行してください。</p>
+<ul>
+<li>作成したデータセットを訓練用とテスト用（9:1）に分け、訓練データを用いてLASSO及びRIDGE回帰を実行せよ。ただし、罰則項lambdaの値はCVによって最適値を決めること。</li>
+<li>推定されたLASSO及びRIDGEの回帰係数について議論せよ（例えば、LASSO回帰について非ゼロ係数を持つ説明変数は目的変数に対して影響を与える重要な変数と解釈することが出来る）</li>
+<li>二つの回帰モデルを用いて、それぞれのテストデータに対する予測精度を検証せよ。</li>
+</ul>
+</p>
+</div>
+</div>
 
 
 
