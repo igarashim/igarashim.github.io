@@ -607,7 +607,7 @@ comp_dum = make_dum(movies$production_companies, &quot;comp&quot;)</code></pre>
 ##   ..$ : NULL
 ##   ..$ : chr [1:5688] &quot;cast_Sam Worthington&quot; &quot;cast_Zoe Saldana&quot; &quot;cast_Sigourney Weaver&quot; &quot;cast_Johnny Depp&quot; ...</code></pre>
 <p>
-いくつかの細かな処理をし、必要そうな変数を選んだところ（これは私の見解であり、この変数を必ず使わなければならないわけではない、自ら考えること）、最終的には、n=3376, p=11361のデータとなった。
+いくつかの細かな処理をし、必要そうな変数を選んだところ（これは私の見解であり、この変数を必ず使わなければならないわけではない、自ら考えること）、最終的には、n=3376, p=11361のデータとなりました。
 </p>
 <pre class="r"><code>movies$revenue = as.numeric(movies$revenue) / 1000
 movies$budget = movies$budget / 1000
@@ -624,8 +624,8 @@ dim(dm)</code></pre>
 <p>
 <p>このデータセットを使って以下のタスクを実行してください。</p>
 <ul>
-<li>作成したデータセットを訓練用とテスト用（9:1）に分け、訓練データを用いてLASSO及びRIDGE回帰を実行せよ。ただし、罰則項lambdaの値はCVによって最適値を決めること。</li>
-<li>推定されたLASSO及びRIDGEの回帰係数について議論せよ（例えば、LASSO回帰について非ゼロ係数を持つ説明変数は目的変数に対して影響を与える重要な変数と解釈することが出来る）</li>
+<li>作成したデータセットを訓練用とテスト用（9:1）に分け、訓練データを用いてLASSO及びRIDGE回帰を実行せよ。ただし、目的変数は映画の興行収入である<code>revenue</code>変数であり、説明変数についてはデータセット内のどの変数を、どのような変換を施して用いても良い。また、罰則項lambdaの値はCVによって最適値を決めること。</li>
+<li>推定されたLASSO及びRIDGEの回帰係数について議論せよ（例えば、LASSO回帰について非ゼロ係数を持つ説明変数は目的変数に対して影響を与える重要な変数と解釈することが出来る）。</li>
 <li>二つの回帰モデルを用いて、それぞれのテストデータに対する予測精度を検証せよ。</li>
 </ul>
 </p>
