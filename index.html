@@ -22,9 +22,8 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
-<script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
-<script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -99,6 +98,9 @@ img {
 button.code-folding-btn:focus {
   outline: none;
 }
+summary {
+  display: list-item;
+}
 </style>
 
 
@@ -113,7 +115,6 @@ body {
   padding-top: 56px;
   margin-top: -56px;
 }
-
 .section h2 {
   padding-top: 56px;
   margin-top: -56px;
@@ -133,6 +134,43 @@ body {
 .section h6 {
   padding-top: 56px;
   margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
 }
 </style>
 
@@ -154,18 +192,77 @@ $(document).ready(function () {
 });
 </script>
 
-
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
 });
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
 </script>
 
 <!-- code folding -->
-
 
 
 
@@ -230,22 +327,26 @@ $(document).ready(function () {
 
 <div id="mirai-igarashi" class="section level3">
 <h3>Mirai Igarashi</h3>
+<hr />
+</div>
+<div id="slide-used-in-dssr-workshop-is-here" class="section level1">
+<h1>Slide used in DSSR workshop is <a href="./data/slide.pdf" target="_blank">here</a></h1>
+<hr />
 <p>
 <a href="Curriculum Vitae.pdf" target="_blank">Download Curriculum Vitae</a>
 </p>
 <p>
-所属：<a href="http://www.econ.tohoku.ac.jp/econ/" target="_blank">東北大学経済学研究科</a> 博士後期課程一年 <!-- <br> --> <!-- Position: Doctor Student at <a href="http://www.econ.tohoku.ac.jp/econ/english/index.html" target="_blank">Graduate School of Economics and Management</a>, Tohoku Unicersity --> <br> 指導教官：<a href="http://www.econ.tohoku.ac.jp/~terui/index.html" target="_blank">照井伸彦</a>教授 <!-- <br> --> <!-- Mentor: <a href="http://www.econ.tohoku.ac.jp/~terui/indexe.html" target="_blank">Nobuhiko Terui</a> --> <br> 研究分野：マーケティング・リサーチ、 消費者行動論、統計モデリング（ベイズモデル）、 ビッグデータ解析、機械学習（深層学習、トピックモデル、サポートベクターマシン） <!-- <br> --> <!-- Domain: Marketing Science, Consumer Behavior, Statistical Modeling (Bayesian Modeling), Big Data Analysis, Machine Learning (Deep Learning, Topic Modeling, Support Vector Machine) -->
+所属：<a href="http://www.econ.tohoku.ac.jp/econ/" target="_blank">東北大学経済学研究科</a> 博士後期課程二年 <!-- <br> --> <!-- Position: Doctor Student at <a href="http://www.econ.tohoku.ac.jp/econ/english/index.html" target="_blank">Graduate School of Economics and Management</a>, Tohoku Unicersity --> <br> 指導教官：<a href="http://www.econ.tohoku.ac.jp/~terui/index.html" target="_blank">照井伸彦</a>教授 <!-- <br> --> <!-- Mentor: <a href="http://www.econ.tohoku.ac.jp/~terui/indexe.html" target="_blank">Nobuhiko Terui</a> --> <br> 研究分野：マーケティング・リサーチ、 消費者行動論、統計モデリング（ベイズモデル）、 ビッグデータ解析、機械学習（深層学習、トピックモデル、サポートベクターマシン） <!-- <br> --> <!-- Domain: Marketing Science, Consumer Behavior, Statistical Modeling (Bayesian Modeling), Big Data Analysis, Machine Learning (Deep Learning, Topic Modeling, Support Vector Machine) -->
 </p>
 <hr />
-</div>
-<div class="section level3">
+<div id="section" class="section level3">
 <h3>自己紹介</h3>
 <p>
-東北大学経済学研究科博士後期課程一年の五十嵐未来と申します。<br> 照井伸彦教授指導の下で主にマーケティング・リサーチを学んでいます。<br> 機械学習にも興味があり、現在は機械学習の分野で発展した手法（深層学習やトピックモデルなど）をマーケティング課題の解決に応用するために、フレームワークの構築や新手法の開発を研究しています。
+東北大学経済学研究科博士後期課程二年の五十嵐未来です。<br> 照井伸彦教授指導の下で主にマーケティング・リサーチを学んでいます。<br> 機械学習にも興味があり、現在は機械学習の分野で発展した手法（深層学習やトピックモデルなど）をマーケティング課題の解決に応用するために、フレームワークの構築や新手法の開発を研究しています。
 </p>
 <hr />
 </div>
-<div class="section level3">
+<div id="section-1" class="section level3">
 <h3>問い合わせ</h3>
 <p>
 （大学）<br> 980-8576<br> 宮城県仙台市青葉区川内27-1<br> 東北大学経済学研究科教務係<br> TEL: 022-795-6265<br> FAX: 022-795-6270
@@ -254,8 +355,9 @@ $(document).ready(function () {
 <p>（個人）<br> E-mail: mirai.igarashi.s7“atmark”dc.tohoku.ac.jp<br></p>
 <hr />
 <p>このサイトは統計ソフトR内のパッケージ<code>rmarkdown</code>を用いて作られています。最終更新:</p>
-<pre><code>## [1] &quot;Fri Jan 11 14:12:27 2019&quot;</code></pre>
+<pre><code>## [1] &quot;Thu Jun 27 10:40:07 2019&quot;</code></pre>
 <hr />
+</div>
 </div>
 
 <p>Copyright &copy; 2019 Mirai Igarashi All rights reserved.</p>
