@@ -1,18 +1,21 @@
-name: "igarashi"
+name: "Statistics and Marketing Seminar"
 navbar:
   left:
-    - text: "Home"
+    - text: "Marketing Science Seminar"
+      href: StatMark_Seminar.html
+  right:
+    - text: "Top"
       icon: fa-home
-      href: index.html
-    - text: "Research"
+      href: StatMark_Seminar.html
+    - text: "members"
       icon: fa-user
-      href: research.html
-    - text: "Curriculum Vitae"
-      icon: fa-file-text
-      href: Curriculum Vitae.pdf
-    - text: "Links"
-      icon: fa-link
-      href: links.html
+      href: members.html
+    - text: "seminars"
+      icon: fa-chalkboard
+      href: seminars.html
+    - text: "projects"
+      icon: fa-project-diagram
+      href: projects.html
 output:
   html_document:
     theme: cosmo
